@@ -1,0 +1,11 @@
+<h1>This is admin Panel</h1>
+
+<h2>All students</h2>
+<%@students = User.where(role: "user")%>
+
+<%@students.each do |student|%>
+
+<%=student.email%><br>
+<%end%>
+
+

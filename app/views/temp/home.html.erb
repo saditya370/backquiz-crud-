@@ -1,0 +1,12 @@
+<h1>Temp#home</h1>
+<p>Find me in app/views/temp/home.html.erb</p>
+<%if user_signed_in?%>
+<p>Hello <%= current_user.email%></p>
+<p>You are a <%=current_user.role%></p>
+<%if current_user.admin?%>
+<%=render partial: "shared/admin"%>
+<%else%> 
+<%=render partial: "shared/student"%>
+
+<%end%>
+<%end%>
