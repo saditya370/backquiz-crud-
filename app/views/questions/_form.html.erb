@@ -1,0 +1,33 @@
+<%= form_with model: [ @quiz, @quiz.questions.build ] do |form| %>
+
+  <p>
+    <div>
+    <%=form.label :Question%>
+    <%= form.text_area :ques_desc %>
+    </div>
+    <div>
+    <%=form.label :Option1%>
+    <%= form.text_field :op1 %>
+    </div>
+    <div>
+    <%=form.label :Option2%>
+    <%= form.text_field :op2 %>
+    </div>
+    <div>
+    <%=form.label :Option3%>
+    <%= form.text_field :op3 %>
+    </div>
+    <div>
+    <%=form.label :option4%>
+    <%= form.text_field :op4 %>
+    </div>
+    <div>
+    <%=form.label :answer%>
+    <%= form.text_field :answer %>
+    </div>
+    <%# <%=form.hidden_field :user_id, value: current_user[:id]%> 
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

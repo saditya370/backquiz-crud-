@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @quiz %>
+
+<%@quiz.questions.each do |a|%>
+
+
+ <b><%=a.ques_desc%></b><br>
+    <%= radio_button_tag a.id,a.op1%>
+    
+    <%=a.op1%>
+    <br>
+    <%= radio_button_tag a.id,a.op2%>
+    <%=a.op2%>
+    <br>
+    <%= radio_button_tag a.id,a.op3%>
+    <%=a.op3%>
+    <br>
+    <%= radio_button_tag a.id,a.op4%>
+    <%=a.op4%>
+    
+    
+    
+    <br>
+
+<%end%>
+
+
+
+<h5>Add a Question</h5>
+<%=render partial: "questions/form"%>
+
+<div>
+  <%= link_to "Edit this quiz", edit_quiz_path(@quiz) %> |
+  <%= link_to "Back to quizzes", quizzes_path %>
+
+  <%= button_to "Destroy this quiz", @quiz, method: :delete %>
+</div>
